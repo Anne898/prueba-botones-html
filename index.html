@@ -1,121 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
+<html style="font-size: 16px;" lang="es"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
-      crossorigin="anonymous">
-
+    <meta charset="utf-8">
+    <meta name="keywords"
+      content="¡Vamos a Celebrar!, ​Ya Solo Faltan..., ¡Acompáñanos a el día!, Te esperamos enNombre del salón, ¡No Faltes!​, Confirma tu asistencia">
+    <meta name="description" content>
     <title>Invitación</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+    <link rel="stylesheet" href="Invitación.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer></script>
 
-    <style>
+    <meta name="generator" content="Nicepage 5.11.4, nicepage.com">
 
-    
-        body {
-          margin: 0;
-          padding: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          background-color: #f0f0f0;
-        }
-    
-        #video-container {
-          position: relative;
-          width: 100%;
-          height: 0;
-          padding-bottom: 177.78%; /* Aspect ratio 9:16 (1080x1920) */
-        }
-    
-        #video {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-    
-        #button-container {
-          position: fixed;
-          bottom: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-    
-        .button {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 200px;
-          height: 50px;
-          border-radius: 25px;
-          background-color: #ffabd4;
-          margin-bottom: 10px;
-          font-size: 16px;
-          color: #ffffff;
-          text-decoration: none;
-        }
-    
-        .button i {
-          margin-right: 10px;
-        }
-      </style>
+    <link id="u-theme-google-font" rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+      
 
- 
-<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-<script type="text/javascript">
+    <meta name="theme-color" content="#3f62f1">
+    <meta property="og:title" content="Invitación">
+    <meta property="og:description" content>
+    <meta property="og:type" content="website">
+    <meta data-intl-tel-input-cdn-path="intlTelInput/">
+
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
 
 document.addEventListener('DOMContentLoaded', function() {
-var video = document.querySelector('video');
-var botonDireccion = document.getElementById('boton-direccion');
-var botonAsistencia = document.getElementById('boton-asistencia');
+  var video = document.querySelector('video');
+  var botonDireccion = document.getElementById('boton-direccion');
+  var botonAsistencia = document.getElementById('boton-asistencia');
 
-// Función para detener el video
-function stopVideo() {
-video.pause();
-}
+  // Función para detener el video
+  function stopVideo() {
+    video.pause();
+  }
 
-// Evento antes de descargar la página
-window.addEventListener('beforeunload', function() {
-stopVideo();
-});
+  // Evento antes de descargar la página
+  window.addEventListener('beforeunload', function() {
+    stopVideo();
+  });
 
-video.addEventListener('timeupdate', function() {
-var currentTime = video.currentTime;
+  video.addEventListener('timeupdate', function() {
+    var currentTime = video.currentTime;
 
-if (currentTime >= 27 && currentTime <= 34.5) {
-  botonDireccion.style.opacity = '1'; // Mostrar el botón
-  botonDireccion.style.pointerEvents = 'auto'; // Habilitar eventos de clic
-} else {
-  botonDireccion.style.opacity = '0'; // Ocultar el botón
-  botonDireccion.style.pointerEvents = 'none'; // Deshabilitar eventos de clic
-}
+    if (currentTime >= 27 && currentTime <= 34.5) {
+      botonDireccion.style.opacity = '1'; // Mostrar el botón
+      botonDireccion.style.pointerEvents = 'auto'; // Habilitar eventos de clic
+    } else {
+      botonDireccion.style.opacity = '0'; // Ocultar el botón
+      botonDireccion.style.pointerEvents = 'none'; // Deshabilitar eventos de clic
+    }
 
-if (currentTime >= 35) {
-  botonAsistencia.style.opacity = '1'; // Mostrar el botón
-  botonAsistencia.style.pointerEvents = 'auto'; // Habilitar eventos de clic
-} else {
-  botonAsistencia.style.opacity = '0'; // Ocultar el botón
-  botonAsistencia.style.pointerEvents = 'none'; // Deshabilitar eventos de clic
-}
-});
+    if (currentTime >= 35) {
+      botonAsistencia.style.opacity = '1'; // Mostrar el botón
+      botonAsistencia.style.pointerEvents = 'auto'; // Habilitar eventos de clic
+    } else {
+      botonAsistencia.style.opacity = '0'; // Ocultar el botón
+      botonAsistencia.style.pointerEvents = 'none'; // Deshabilitar eventos de clic
+    }
+  });
 
-video.addEventListener('ended', function() {
-botonDireccion.style.opacity = '0'; // Ocultar el botón
-botonDireccion.style.pointerEvents = 'none'; // Deshabilitar eventos de clic
-botonAsistencia.style.opacity = '0'; // Ocultar el botón
-botonAsistencia.style.pointerEvents = 'none'; // Deshabilitar eventos de clic
-});
+  video.addEventListener('ended', function() {
+    botonDireccion.style.opacity = '0'; // Ocultar el botón
+    botonDireccion.style.pointerEvents = 'none'; // Deshabilitar eventos de clic
+    botonAsistencia.style.opacity = '0'; // Ocultar el botón
+    botonAsistencia.style.pointerEvents = 'none'; // Deshabilitar eventos de clic
+  });
 });
 
 
 </script>
 
+
+<style>
+
+    
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+
+  #video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 177.78%; /* Aspect ratio 9:16 (1080x1920) */
+  }
+
+  #video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  #button-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #ffabd4;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .button i {
+    margin-right: 10px;
+  }
+</style>
 
   </head>
   <body>
